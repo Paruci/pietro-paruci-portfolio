@@ -412,4 +412,27 @@ body {
 @media (max-width: 768px) {
   .menu-toggle { display: block; }
 }
+@media (max-width: 768px) {
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+  }
+
+  .timeline::before {
+    display: none;
+  }
+
+  .timeline-item {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 1rem auto;
+    padding: 1rem;
+  }
+
+  .timeline-item::before {
+    display: none;
+  }
+}
 
