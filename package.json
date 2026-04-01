@@ -1,0 +1,14 @@
+{
+  "name": "pietro-paruci-portfolio",
+  "version": "1.0.0",
+  "description": "Portfólio profissional moderno em HTML/CSS/JavaScript para Pietro Paruci.",
+  "private": true,
+  "scripts": {
+    "dev": "npx serve . -s -l 3000",
+    "build": "echo \"No build step required for static HTML/CSS/JS\"",
+    "start": "npx serve . -s -l 3000"
+  },
+  "keywords": ["portfolio", "developer", "html", "css", "javascript", "dark-mode"],
+  "author": "Pietro Paruci",
+  "license": "MIT"
+}
