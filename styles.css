@@ -911,3 +911,51 @@ a {
     font-size: 0.85rem;
   }
 }
+@supports (-webkit-touch-callout: none) {
+  body {
+    background: #05050e !important;
+  }
+
+  body::before,
+  body::after {
+    display: none !important;
+  }
+
+  .hero::before,
+  .hero::after {
+    display: none !important;
+  }
+
+  .navbar {
+    background: rgba(4, 6, 18, 0.95) !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+
+  .nav-links {
+    background: rgba(4, 6, 18, 0.99) !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+
+  .skill-card,
+  .experience-item,
+  .language-item {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+
+  .btn-icon {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+
+  .shine {
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
+    -webkit-text-fill-color: var(--accent) !important;
+    color: var(--accent) !important;
+    animation: none !important;
+  }
+}
