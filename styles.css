@@ -59,6 +59,8 @@ body::before {
   pointer-events: none;
   z-index: -2;
   opacity: 0.35;
+  -webkit-mask-image: radial-gradient(circle at center, black 25%, transparent 80%);
+  mask-image: radial-gradient(circle at center, black 25%, transparent 80%);
 }
 
 body::after {
@@ -101,6 +103,8 @@ a {
   backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   transition: background var(--transition), border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
 }
 
 .navbar-scrolled {
@@ -161,6 +165,8 @@ a {
   align-items: center;
   gap: 14px;
   list-style: none;
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
 }
 
 .nav-links a {
@@ -305,6 +311,8 @@ a {
   color: #fff;
   background: rgba(26, 26, 51, 0.45);
   border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
 
@@ -480,6 +488,7 @@ a {
   padding: 1.15rem;
   text-align: left;
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .skill-card:hover {
@@ -510,6 +519,7 @@ a {
   max-width: 920px;
   margin: 0 auto;
   padding: 1.5rem;
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
 
@@ -604,7 +614,9 @@ a {
   background: linear-gradient(120deg, #9168ff 20%, #ffffff 40%, #9168ff 60%);
   background-size: 200% auto;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: transparent; /* fallback */
   animation: shineMove 3s linear infinite;
 }
 
