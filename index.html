@@ -13,56 +13,69 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav class="navbar">
-    <div class="container">
-        <h1 class="logo">Pietro Paruci</h1>
 
-        <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
-            <i class="fas fa-bars"></i>
-        </button>
+    <nav class="navbar" aria-label="Navegação principal">
+        <div class="container">
+            <a class="logo" href="#hero">Pietro Paruci</a>
 
-        <ul class="nav-links">
-            <li><a href="#hero">Início</a></li>
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#formacao">Formação</a></li>
-            <li><a href="#hard-skills">Hard Skills</a></li>
-            <li><a href="#soft-skills">Soft Skills</a></li>
-            <li><a href="#experiencia">Experiência</a></li>
-            <li><a href="#idiomas">Idiomas</a></li>
-            <li><a href="#projetos">Projetos</a></li>
-        </ul>
-    </div>
-</nav>
+            <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-links">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
 
-    <section id="hero" class="hero">
+            <ul class="nav-links" id="nav-links" role="list">
+                <li><a href="#hero">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#formacao">Formação</a></li>
+                <li><a href="#hard-skills">Hard Skills</a></li>
+                <li><a href="#soft-skills">Soft Skills</a></li>
+                <li><a href="#experiencia">Experiência</a></li>
+                <li><a href="#idiomas">Idiomas</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="hero" class="hero" aria-label="Apresentação">
         <div class="container">
             <h1><span class="shine">Pietro</span> Paruci</h1>
             <h2>Desenvolvedor de Software</h2>
-            <p id="hero-text" class="hero-text"></p>
-            <div class="hero-buttons">
-                <a href="https://www.linkedin.com/in/pietro-paruci-38b6223ab/" class="btn btn-icon" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/paruci" class="btn btn-icon" aria-label="GitHub" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
-                <a href="https://www.credly.com/users/paruci" class="btn btn-icon" aria-label="Credly" target="_blank" rel="noopener"><i class="fas fa-certificate"></i></a>
-                <a href="mailto:pietro.paruci@gmail.com" class="btn btn-icon" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                <a href="https://wa.me/5511966120620" class="btn btn-icon" aria-label="WhatsApp" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://instagram.com/paruci_" class="btn btn-icon" aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+            <p id="hero-text" class="hero-text" aria-live="polite"></p>
+            <div class="hero-buttons" role="list">
+                <a href="https://www.linkedin.com/in/pietro-paruci-38b6223ab/" class="btn btn-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" role="listitem">
+                    <i class="fab fa-linkedin" aria-hidden="true"></i>
+                </a>
+                <a href="https://github.com/paruci" class="btn btn-icon" aria-label="GitHub" target="_blank" rel="noopener noreferrer" role="listitem">
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.credly.com/users/paruci" class="btn btn-icon" aria-label="Credly — certificações" target="_blank" rel="noopener noreferrer" role="listitem">
+                    <i class="fas fa-certificate" aria-hidden="true"></i>
+                </a>
+                <a href="mailto:pietro.paruci@gmail.com" class="btn btn-icon" aria-label="Enviar e-mail" role="listitem">
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                </a>
+                <a href="https://wa.me/5511966120620" class="btn btn-icon" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer" role="listitem">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                </a>
+                <a href="https://instagram.com/paruci_" class="btn btn-icon" aria-label="Instagram" target="_blank" rel="noopener noreferrer" role="listitem">
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                </a>
             </div>
         </div>
     </section>
 
-    <section id="sobre" class="section">
+    <section id="sobre" class="section" aria-labelledby="sobre-titulo">
         <div class="container">
-            <h2>Sobre Mim</h2>
+            <h2 id="sobre-titulo">Sobre Mim</h2>
             <p>Me chamo Pietro Paruci, estudante de Engenharia de Software pela Unianchieta, com formação técnica em T.I. Tenho experiência com atendimento ao público e gestão operacional, com foco em organização, resolução de problemas e experiência do usuário. Atualmente, estou em transição para a área técnica, desenvolvendo sistemas eficientes, estruturados e escaláveis.</p>
         </div>
     </section>
 
-    <section id="formacao" class="section">
+    <section id="formacao" class="section" aria-labelledby="formacao-titulo">
         <div class="container">
-            <h2>Formação Acadêmica</h2>
+            <h2 id="formacao-titulo">Formação Acadêmica</h2>
             <div class="timeline">
-                    <div class="timeline-item">
-                    <div class="timeline-dot"></div>
+                <div class="timeline-item">
+                    <div class="timeline-dot" aria-hidden="true"></div>
                     <div class="timeline-content">
                         <div class="timeline-meta">
                             <span class="timeline-status completed">Concluído</span>
@@ -72,7 +85,7 @@
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-dot"></div>
+                    <div class="timeline-dot" aria-hidden="true"></div>
                     <div class="timeline-content">
                         <div class="timeline-meta">
                             <span class="timeline-status ongoing">Cursando</span>
@@ -85,105 +98,105 @@
         </div>
     </section>
 
-    <section id="hard-skills" class="section">
+    <section id="hard-skills" class="section" aria-labelledby="hard-skills-titulo">
         <div class="container">
-            <h2>Hard Skills</h2>
+            <h2 id="hard-skills-titulo">Hard Skills</h2>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <i class="fab fa-java"></i>
+                    <i class="fab fa-java" aria-hidden="true"></i>
                     <h3>Java</h3>
                 </div>
                 <div class="skill-card">
-                    <i class="fab fa-microsoft"></i>
+                    <i class="fab fa-microsoft" aria-hidden="true"></i>
                     <h3>C#</h3>
                 </div>
                 <div class="skill-card">
-                    <i class="fas fa-code"></i>
+                    <i class="fas fa-code" aria-hidden="true"></i>
                     <h3>C++</h3>
                 </div>
                 <div class="skill-card">
-                    <i class="fab fa-js"></i>
+                    <i class="fab fa-js" aria-hidden="true"></i>
                     <h3>JavaScript</h3>
                 </div>
                 <div class="skill-card">
-                    <i class="fab fa-python"></i>
+                    <i class="fab fa-python" aria-hidden="true"></i>
                     <h3>Python</h3>
                 </div>
                 <div class="skill-card">
-                    <i class="fas fa-database"></i>
+                    <i class="fas fa-database" aria-hidden="true"></i>
                     <h3>SQL</h3>
                 </div>
                 <div class="skill-card">
-                    <i class="fab fa-html5"></i>
+                    <i class="fab fa-html5" aria-hidden="true"></i>
                     <h3>HTML</h3>
                 </div>
                 <div class="skill-card">
-                    <i class="fab fa-css3"></i>
+                    <i class="fab fa-css3" aria-hidden="true"></i>
                     <h3>CSS</h3>
                 </div>
                 <div class="skill-card">
-                    <i class="fas fa-brain"></i>
+                    <i class="fas fa-brain" aria-hidden="true"></i>
                     <h3>Lógica de Programação</h3>
                 </div>
                 <div class="skill-card">
-                    <i class="fas fa-sitemap"></i>
+                    <i class="fas fa-sitemap" aria-hidden="true"></i>
                     <h3>Estrutura de Dados</h3>
                 </div>
                 <div class="skill-card">
-                    <i class="fas fa-tasks"></i>
+                    <i class="fas fa-tasks" aria-hidden="true"></i>
                     <h3>Scrum</h3>
                 </div>
                 <div class="skill-card">
-                    <i class="fas fa-columns"></i>
+                    <i class="fas fa-columns" aria-hidden="true"></i>
                     <h3>Kanban</h3>
                 </div>
                 <div class="skill-card">
-                    <i class="fas fa-users-cog"></i>
+                    <i class="fas fa-users-cog" aria-hidden="true"></i>
                     <h3>Metodologias Ágeis</h3>
                 </div>
                 <div class="skill-card">
-                    <i class="fas fa-file-alt"></i>
+                    <i class="fas fa-file-alt" aria-hidden="true"></i>
                     <h3>Pacote Office</h3>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="soft-skills" class="section">
+    <section id="soft-skills" class="section" aria-labelledby="soft-skills-titulo">
         <div class="container">
-            <h2>Soft Skills</h2>
+            <h2 id="soft-skills-titulo">Soft Skills</h2>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <i class="fas fa-comments"></i>
+                    <i class="fas fa-comments" aria-hidden="true"></i>
                     <h3>Comunicação Assertiva</h3>
                 </div>
                 <div class="skill-card">
-                    <i class="fas fa-lightbulb"></i>
+                    <i class="fas fa-lightbulb" aria-hidden="true"></i>
                     <h3>Resolução de Problemas</h3>
                 </div>
                 <div class="skill-card">
-                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-heart" aria-hidden="true"></i>
                     <h3>Inteligência Emocional</h3>
                 </div>
                 <div class="skill-card">
-                    <i class="fas fa-clock"></i>
+                    <i class="fas fa-clock" aria-hidden="true"></i>
                     <h3>Gestão de Tempo</h3>
                 </div>
                 <div class="skill-card">
-                    <i class="fas fa-folder-open"></i>
+                    <i class="fas fa-folder-open" aria-hidden="true"></i>
                     <h3>Organização</h3>
                 </div>
                 <div class="skill-card">
-                    <i class="fas fa-user"></i>
+                    <i class="fas fa-user" aria-hidden="true"></i>
                     <h3>Foco no Usuário</h3>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="experiencia" class="section">
+    <section id="experiencia" class="section" aria-labelledby="experiencia-titulo">
         <div class="container">
-            <h2>Experiência Profissional</h2>
+            <h2 id="experiencia-titulo">Experiência Profissional</h2>
             <div class="experience-item">
                 <h3>Recepcionista — Adriano Hair Style</h3>
                 <p><strong>Foco:</strong> Gestão de agenda e fluxo operacional, atendimento consultivo e suporte direto ao público.</p>
@@ -193,42 +206,38 @@
         </div>
     </section>
 
-    <section id="idiomas" class="section">
+    <section id="idiomas" class="section" aria-labelledby="idiomas-titulo">
         <div class="container">
-            <h2>Idiomas</h2>
+            <h2 id="idiomas-titulo">Idiomas</h2>
             <div class="language-item">
                 <h3>Inglês</h3>
-                <div class="progress-bar">
-                    <div class="progress" style="width: 70%;"><span class="progress-text">70%</span></div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="Inglês — 70%">
+                    <div class="progress" style="width: 70%;"><span class="progress-text" aria-hidden="true">70%</span></div>
                 </div>
                 <span>Intermediário</span>
             </div>
             <div class="language-item">
                 <h3>Espanhol</h3>
-                <div class="progress-bar">
-                    <div class="progress" style="width: 65%;"><span class="progress-text">65%</span></div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" aria-label="Espanhol — 65%">
+                    <div class="progress" style="width: 65%;"><span class="progress-text" aria-hidden="true">65%</span></div>
                 </div>
                 <span>Intermediário</span>
             </div>
         </div>
     </section>
 
-    <section id="projetos" class="section">
-    <div class="container">
-        <h2>Projetos</h2>
-
-        <div class="construction">
-            <i class="fas fa-tools"></i>
-            <h3>Em construção</h3>
-            <p>Estou trabalhando em novos projetos e em breve eles estarão disponíveis aqui.</p>
-        </div>
-
-    </div>
-</section>
+    <section id="projetos" class="section" aria-labelledby="projetos-titulo">
+        <div class="container">
+            <h2 id="projetos-titulo">Projetos</h2>
+            <div class="construction">
+                <i class="fas fa-tools" aria-hidden="true"></i>
+                <h3>Em construção</h3>
+                <p>Estou trabalhando em novos projetos e em breve eles estarão disponíveis aqui.</p>
+            </div>
         </div>
     </section>
 
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <p>&copy; 2026 Pietro Paruci. Todos os direitos reservados.</p>
         </div>
