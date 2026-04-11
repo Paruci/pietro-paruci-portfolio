@@ -232,6 +232,7 @@ a {
   letter-spacing: -0.04em;
   text-shadow: 0 0 14px rgba(145, 104, 255, 0.35);
   animation: heroTitleIn 1s ease-out both;
+  will-change: transform;
 }
 
 .hero h2 {
@@ -394,6 +395,7 @@ a {
 .experience-item,
 .language-item,
 .construction {
+  display: flex; gap: 1rem; align-items: flex-start;
   position: relative;
   background: linear-gradient(180deg, rgba(22, 24, 44, 0.88), rgba(14, 15, 28, 0.92));
   border: 1px solid rgba(145, 104, 255, 0.18);
@@ -910,6 +912,14 @@ a {
   .footer p {
     font-size: 0.85rem;
   }
+  .timeline-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  flex-shrink: 0;
+  box-shadow: 0 0 10px rgba(145, 104, 255, 0.4);
+}
 }
 @supports (-webkit-touch-callout: none) {
   body {

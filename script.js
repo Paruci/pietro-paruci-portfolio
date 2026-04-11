@@ -6,13 +6,21 @@ const heroText = document.getElementById('hero-text')
 const sections = document.querySelectorAll('.section')
 const cards = document.querySelectorAll('.skill-card, .timeline-item, .experience-item, .language-item, .construction')
 
+function closeMenu() {
+  navLinks.classList.remove('active')
+  menuToggle.setAttribute('aria-expanded', 'false')
+  menuToggle.setAttribute('aria-label', 'Abrir menu')
+  const icon = menuToggle.querySelector('i')
+  if (icon) {
+    icon.classList.replace('fa-times', 'fa-bars')
+  }
+}
+
 if (menuToggle && navLinks) {
   menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active')
-
-    const expanded = navLinks.classList.contains('active')
-    menuToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false')
-
+    const expanded = navLinks.classList.toggle('active')
+    menuToggle.setAttribute('aria-expanded', String(expanded))
+    menuToggle.setAttribute('aria-label', expanded ? 'Fechar menu' : 'Abrir menu')
     const icon = menuToggle.querySelector('i')
     if (icon) {
       icon.classList.toggle('fa-bars', !expanded)
@@ -22,25 +30,21 @@ if (menuToggle && navLinks) {
 
   navItems.forEach(item => {
     item.addEventListener('click', () => {
-      navLinks.classList.remove('active')
-      menuToggle.setAttribute('aria-expanded', 'false')
-
-      const icon = menuToggle.querySelector('i')
-      if (icon) {
-        icon.classList.add('fa-bars')
-        icon.classList.remove('fa-times')
-      }
+      setTimeout(closeMenu, 150)
     })
+  })
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+      closeMenu()
+      menuToggle.focus()
+    }
   })
 }
 
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 20) {
-    navbar.classList.add('navbar-scrolled')
-  } else {
-    navbar.classList.remove('navbar-scrolled')
-  }
-})
+  navbar.classList.toggle('navbar-scrolled', window.scrollY > 20)
+}, { passive: true })
 
 const text =
   'Estudante de Engenharia de Software focado em criar soluções eficientes, escaláveis e com ótima experiência para o usuário.'
@@ -54,7 +58,7 @@ if (heroText) {
       setTimeout(typeWriter, 26)
     }
   }
-  typeWriter()
+  setTimeout(typeWriter, 1300)
 }
 
 const observer = new IntersectionObserver(
@@ -62,20 +66,17 @@ const observer = new IntersectionObserver(
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('animate')
+        observer.unobserve(entry.target)
       }
     })
   },
   { threshold: 0.16 }
 )
 
-sections.forEach(section => {
-  observer.observe(section)
-})
+sections.forEach(section => observer.observe(section))
 
 cards.forEach((card, index) => {
-  card.style.opacity = '0'
-  card.style.transform = 'translateY(24px)'
-  card.style.transition = `opacity 0.65s ease ${index * 0.03}s, transform 0.65s ease ${index * 0.03}s`
+  card.style.cssText = `opacity:0; transform:translateY(24px); transition:opacity 0.65s ease ${index * 0.03}s, transform 0.65s ease ${index * 0.03}s`
 })
 
 const cardObserver = new IntersectionObserver(
@@ -84,22 +85,21 @@ const cardObserver = new IntersectionObserver(
       if (entry.isIntersecting) {
         entry.target.style.opacity = '1'
         entry.target.style.transform = 'translateY(0)'
+        cardObserver.unobserve(entry.target)
       }
     })
   },
   { threshold: 0.12 }
 )
 
-cards.forEach(card => {
-  cardObserver.observe(card)
-})
+cards.forEach(card => cardObserver.observe(card))
 
 document.addEventListener('mousemove', e => {
+  if (window.innerWidth <= 768) return
   const x = (e.clientX / window.innerWidth - 0.5) * 10
   const y = (e.clientY / window.innerHeight - 0.5) * 10
-
   const heroTitle = document.querySelector('.hero h1')
-  if (heroTitle && window.innerWidth > 768) {
+  if (heroTitle) {
     heroTitle.style.transform = `translate3d(${x * 0.4}px, ${y * 0.4}px, 0)`
   }
 })
